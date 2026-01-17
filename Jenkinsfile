@@ -7,8 +7,10 @@ pipeline{
                 sh("uname -r")
                 sh("git diff HEAD~1 HEAD")
                 sh("git diff --name-only HEAD~1 HEAD")
-                def filechanges=sh(script: "git diff --name-only HEAD~1 HEAD",returnStdout: True)
-                echo "Changed filename is {{ $filchanges }}"
+                script{
+                    def filechanges=sh(script: "git diff --name-only HEAD~1 HEAD",returnStdout: True)
+                    echo "Changed filename is {{ $filchanges }}"
+                }
                    
             }
         }
