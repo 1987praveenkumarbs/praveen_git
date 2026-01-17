@@ -10,6 +10,8 @@ pipeline{
                 script{
                     def filechanges=sh(script: 'git diff --name-only HEAD~1 HEAD',returnStdout: true)
                     echo "Changed filename is ${filechanges}"
+                    echo "Below are content of file"
+                    sh ("cat ~/workspace/Testpipline/${filechanges}")
                 }
                    
             }
