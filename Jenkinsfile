@@ -12,6 +12,7 @@ pipeline{
                     echo "Changed filename is ${filechanges}"
                     echo "Below are content of file"
                     sh ("cat ~/workspace/Testpipline/${filechanges}")
+                    echo "${BUILD_NUMBER}  ${WORKSPACE}"
                 }
                    
             }
