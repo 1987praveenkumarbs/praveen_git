@@ -9,7 +9,7 @@ pipeline{
                 sh("git diff --name-only HEAD~1 HEAD")
                 script{
                     def filechanges=sh(script: "git diff --name-only HEAD~1 HEAD",returnStdout: True)
-                    echo "Changed filename is ${filchanges}"
+                    echo "Changed filename is ${filechanges}"
                 }
                    
             }
